@@ -17,8 +17,8 @@ const userSchema = new mongoose.Schema({
     aadharNumber: {
         type: String,
         required: true,
-        match: /^\d{12}$/,  // validation pattern for phone numbers with a fixed length of 10 digits
-        unique: true  // make the phone number field unique to ensure that no two users have the same phone number
+        match: /^\d{12}$/,  // validation pattern for aadhar numbers with a fixed length of 12 digits
+        unique: true  // make the aadhar number field unique to ensure that no two users have the same aadhar number
     },
     semester: {
         type: String,
@@ -34,10 +34,6 @@ const userSchema = new mongoose.Schema({
         minlength: 8,
         maxlength: 1024,
         match: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/
-    },
-
-    img: {
-        type: String
     },
     role: {
         type: String,
